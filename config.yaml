@@ -1,0 +1,162 @@
+# ============================================================
+# NetForecaster AI — Master Configuration
+# ============================================================
+
+project:
+  name: "NetForecaster AI"
+  version: "1.0.0"
+  seed: 42
+
+# ── Data Paths ──────────────────────────────────────────────
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  external_dir: "data/external"
+
+# ── Column Names (from Phase 0 inspection) ──────────────────
+columns:
+  timestamp: "Timestamp"
+  label: "Label"
+  protocol: "Protocol"
+  dst_port: "Dst Port"
+
+  # Columns present ONLY in Tuesday file (Thuesday-20-02-2018)
+  tuesday_only:
+    - "Flow ID"
+    - "Src IP"
+    - "Src Port"
+    - "Dst IP"
+
+  # Constant-zero columns identified in Phase 0 — no discriminative info
+  constant_zero:
+    - "Bwd PSH Flags"
+    - "Fwd URG Flags"
+    - "Bwd URG Flags"
+    - "CWE Flag Count"
+    - "Fwd Byts/b Avg"
+    - "Fwd Pkts/b Avg"
+    - "Fwd Blk Rate Avg"
+    - "Bwd Byts/b Avg"
+    - "Bwd Pkts/b Avg"
+    - "Bwd Blk Rate Avg"
+
+  # Columns with Inf/NaN due to zero-duration flows
+  rate_cols_with_inf:
+    - "Flow Byts/s"
+    - "Flow Pkts/s"
+
+  # High-leakage identifier columns (drop from feature vectors)
+  # These are only in Tuesday file; retain for graph construction only
+  identifier_cols:
+    - "Flow ID"
+    - "Src IP"
+    - "Dst IP"
+
+# ── Preprocessing ────────────────────────────────────────────
+preprocessing:
+  # Timestamp filtering: remove rows with 1970-epoch anomalies
+  min_valid_year: 2018
+  max_valid_year: 2019
+
+  # Duplicate handling strategy: keep first occurrence per day
+  # Rationale: brute-force attacks may legitimately repeat — log this
+  drop_duplicates: true
+
+  # Infinite values: replace with NaN then impute
+  inf_replacement: "nan"  # options: "nan", "cap" (cap at 99th percentile)
+  inf_cap_percentile: 99
+
+  # NaN imputation strategy for rate columns (Flow Byts/s, Flow Pkts/s)
+  # Rationale: NaN here means flow_duration=0; set rate to 0
+  rate_nan_fill: 0.0
+
+  # Dtype coercion: after removing header-leak rows, coerce numeric cols
+  coerce_dtypes: true
+
+  # Chunk size for reading large CSVs (rows per chunk)
+  # Tuned for ~8 GB RAM machines; increase if more RAM available
+  chunk_size: 200000
+
+# ── Chronological Split ─────────────────────────────────────
+split:
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+  # Splitting is strictly chronological — no random shuffling
+
+# ── Temporal Windowing ───────────────────────────────────────
+windowing:
+  window_size: 20       # number of past time steps as input
+  forecast_horizon: 5   # number of future steps to predict
+  stride: 1             # step between window starts
+
+# ── Feature Engineering ──────────────────────────────────────
+features:
+  # Scaling method for numerical features
+  scaler: "robust"   # options: standard, robust, minmax
+  # Encoding for categorical columns
+  categorical_encoding: "ordinal"  # options: ordinal, onehot
+
+# ── Temporal Aggregation (for tabular baseline models) ───────
+# Converts (W, D) window into (k*D,) vector for classical ML
+temporal_aggregation:
+  include_last: true    # X[-1] — instantaneous state
+  include_mean: true    # mean(X) — average traffic intensity
+  include_std: true     # std(X) — traffic burstiness/volatility
+  include_min: false    # min(X) — lower bounds
+  include_max: false    # max(X) — upper bounds
+
+# ── Baseline Model Hyperparameters ───────────────────────────
+baseline:
+  logistic:
+    max_iter: 300
+    C: 1.0
+    solver: "lbfgs"
+  random_forest:
+    n_estimators: 60
+    max_depth: 12
+    class_weight: "balanced_subsample"
+  gradient_boosting:
+    n_estimators: 50
+    max_depth: 4
+    learning_rate: 0.1
+  sequential:
+    hidden_dim: 128
+    num_layers: 2
+    dropout: 0.2
+    epochs: 5
+    batch_size: 256
+    learning_rate: 0.001
+
+# ── Training (placeholder for later phases) ─────────────────
+training:
+  batch_size: 256
+  learning_rate: 0.001
+  epochs: 50
+  dropout: 0.2
+  hidden_dim: 128
+  gat_heads: 4
+  transformer_heads: 4
+  transformer_layers: 2
+  loss_weights:
+    state: 1.0
+    attack: 1.0
+    stage: 0.5
+
+# ── Model Paths ──────────────────────────────────────────────
+models:
+  preprocessing_dir: "models/preprocessing"
+  baseline_dir: "models/baseline"
+  world_model_dir: "models/world_model"
+
+# ── Reports ──────────────────────────────────────────────────
+reports:
+  dir: "reports"
+  figures_dir: "reports/figures"
+  metrics_dir: "reports/metrics"
+  results_dir: "reports/results"
+
+# ── Logging ──────────────────────────────────────────────────
+logging:
+  level: "INFO"
+  log_file: "logs/netforecaster.log"

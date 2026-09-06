@@ -1,0 +1,284 @@
+{
+  "Logistic_Standard": {
+    "T+1": {
+      "predicted_positive_count": 191,
+      "predicted_negative_count": 49809,
+      "predicted_positive_pct": 0.382,
+      "actual_positive_pct": 21.236,
+      "mean_predicted_prob": 0.1459,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9898
+    },
+    "T+2": {
+      "predicted_positive_count": 165,
+      "predicted_negative_count": 49835,
+      "predicted_positive_pct": 0.33,
+      "actual_positive_pct": 21.358,
+      "mean_predicted_prob": 0.1464,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9893
+    },
+    "T+3": {
+      "predicted_positive_count": 109,
+      "predicted_negative_count": 49891,
+      "predicted_positive_pct": 0.218,
+      "actual_positive_pct": 21.18,
+      "mean_predicted_prob": 0.1448,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9894
+    },
+    "T+4": {
+      "predicted_positive_count": 159,
+      "predicted_negative_count": 49841,
+      "predicted_positive_pct": 0.318,
+      "actual_positive_pct": 21.46,
+      "mean_predicted_prob": 0.1473,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9884
+    },
+    "T+5": {
+      "predicted_positive_count": 175,
+      "predicted_negative_count": 49825,
+      "predicted_positive_pct": 0.35,
+      "actual_positive_pct": 21.238,
+      "mean_predicted_prob": 0.1466,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9893
+    }
+  },
+  "Logistic_Balanced": {
+    "T+1": {
+      "predicted_positive_count": 5843,
+      "predicted_negative_count": 44157,
+      "predicted_positive_pct": 11.686,
+      "actual_positive_pct": 21.236,
+      "mean_predicted_prob": 0.2891,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9997
+    },
+    "T+2": {
+      "predicted_positive_count": 5759,
+      "predicted_negative_count": 44241,
+      "predicted_positive_pct": 11.518,
+      "actual_positive_pct": 21.358,
+      "mean_predicted_prob": 0.2924,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9996
+    },
+    "T+3": {
+      "predicted_positive_count": 5598,
+      "predicted_negative_count": 44402,
+      "predicted_positive_pct": 11.196,
+      "actual_positive_pct": 21.18,
+      "mean_predicted_prob": 0.2864,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9995
+    },
+    "T+4": {
+      "predicted_positive_count": 5850,
+      "predicted_negative_count": 44150,
+      "predicted_positive_pct": 11.7,
+      "actual_positive_pct": 21.46,
+      "mean_predicted_prob": 0.2911,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9997
+    },
+    "T+5": {
+      "predicted_positive_count": 5823,
+      "predicted_negative_count": 44177,
+      "predicted_positive_pct": 11.646,
+      "actual_positive_pct": 21.238,
+      "mean_predicted_prob": 0.2904,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9996
+    }
+  },
+  "Random_Forest": {
+    "T+1": {
+      "predicted_positive_count": 1840,
+      "predicted_negative_count": 48160,
+      "predicted_positive_pct": 3.68,
+      "actual_positive_pct": 21.236,
+      "mean_predicted_prob": 0.1132,
+      "min_predicted_prob": 0.0047,
+      "max_predicted_prob": 0.8454
+    },
+    "T+2": {
+      "predicted_positive_count": 1824,
+      "predicted_negative_count": 48176,
+      "predicted_positive_pct": 3.648,
+      "actual_positive_pct": 21.358,
+      "mean_predicted_prob": 0.1135,
+      "min_predicted_prob": 0.0031,
+      "max_predicted_prob": 0.866
+    },
+    "T+3": {
+      "predicted_positive_count": 1935,
+      "predicted_negative_count": 48065,
+      "predicted_positive_pct": 3.87,
+      "actual_positive_pct": 21.18,
+      "mean_predicted_prob": 0.1175,
+      "min_predicted_prob": 0.0038,
+      "max_predicted_prob": 0.8906
+    },
+    "T+4": {
+      "predicted_positive_count": 1929,
+      "predicted_negative_count": 48071,
+      "predicted_positive_pct": 3.858,
+      "actual_positive_pct": 21.46,
+      "mean_predicted_prob": 0.1154,
+      "min_predicted_prob": 0.0042,
+      "max_predicted_prob": 0.8828
+    },
+    "T+5": {
+      "predicted_positive_count": 1931,
+      "predicted_negative_count": 48069,
+      "predicted_positive_pct": 3.862,
+      "actual_positive_pct": 21.238,
+      "mean_predicted_prob": 0.1185,
+      "min_predicted_prob": 0.0041,
+      "max_predicted_prob": 0.8198
+    }
+  },
+  "Gradient_Boosting": {
+    "T+1": {
+      "predicted_positive_count": 1946,
+      "predicted_negative_count": 48054,
+      "predicted_positive_pct": 3.892,
+      "actual_positive_pct": 21.236,
+      "mean_predicted_prob": 0.0867,
+      "min_predicted_prob": 0.0151,
+      "max_predicted_prob": 0.8351
+    },
+    "T+2": {
+      "predicted_positive_count": 1935,
+      "predicted_negative_count": 48065,
+      "predicted_positive_pct": 3.87,
+      "actual_positive_pct": 21.358,
+      "mean_predicted_prob": 0.0811,
+      "min_predicted_prob": 0.0155,
+      "max_predicted_prob": 0.8985
+    },
+    "T+3": {
+      "predicted_positive_count": 1924,
+      "predicted_negative_count": 48076,
+      "predicted_positive_pct": 3.848,
+      "actual_positive_pct": 21.18,
+      "mean_predicted_prob": 0.0871,
+      "min_predicted_prob": 0.0153,
+      "max_predicted_prob": 0.8812
+    },
+    "T+4": {
+      "predicted_positive_count": 1929,
+      "predicted_negative_count": 48071,
+      "predicted_positive_pct": 3.858,
+      "actual_positive_pct": 21.46,
+      "mean_predicted_prob": 0.0836,
+      "min_predicted_prob": 0.0158,
+      "max_predicted_prob": 0.8587
+    },
+    "T+5": {
+      "predicted_positive_count": 1916,
+      "predicted_negative_count": 48084,
+      "predicted_positive_pct": 3.832,
+      "actual_positive_pct": 21.238,
+      "mean_predicted_prob": 0.0809,
+      "min_predicted_prob": 0.0154,
+      "max_predicted_prob": 0.8378
+    }
+  },
+  "LSTM": {
+    "T+1": {
+      "predicted_positive_count": 605,
+      "predicted_negative_count": 49395,
+      "predicted_positive_pct": 1.21,
+      "actual_positive_pct": 21.236,
+      "mean_predicted_prob": 0.0256,
+      "min_predicted_prob": 0.0001,
+      "max_predicted_prob": 0.9857
+    },
+    "T+2": {
+      "predicted_positive_count": 601,
+      "predicted_negative_count": 49399,
+      "predicted_positive_pct": 1.202,
+      "actual_positive_pct": 21.358,
+      "mean_predicted_prob": 0.0227,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9886
+    },
+    "T+3": {
+      "predicted_positive_count": 595,
+      "predicted_negative_count": 49405,
+      "predicted_positive_pct": 1.19,
+      "actual_positive_pct": 21.18,
+      "mean_predicted_prob": 0.025,
+      "min_predicted_prob": 0.0001,
+      "max_predicted_prob": 0.9879
+    },
+    "T+4": {
+      "predicted_positive_count": 613,
+      "predicted_negative_count": 49387,
+      "predicted_positive_pct": 1.226,
+      "actual_positive_pct": 21.46,
+      "mean_predicted_prob": 0.0276,
+      "min_predicted_prob": 0.0001,
+      "max_predicted_prob": 0.9837
+    },
+    "T+5": {
+      "predicted_positive_count": 562,
+      "predicted_negative_count": 49438,
+      "predicted_positive_pct": 1.124,
+      "actual_positive_pct": 21.238,
+      "mean_predicted_prob": 0.0218,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9861
+    }
+  },
+  "GRU": {
+    "T+1": {
+      "predicted_positive_count": 427,
+      "predicted_negative_count": 49573,
+      "predicted_positive_pct": 0.854,
+      "actual_positive_pct": 21.236,
+      "mean_predicted_prob": 0.0214,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9974
+    },
+    "T+2": {
+      "predicted_positive_count": 419,
+      "predicted_negative_count": 49581,
+      "predicted_positive_pct": 0.838,
+      "actual_positive_pct": 21.358,
+      "mean_predicted_prob": 0.0234,
+      "min_predicted_prob": 0.0001,
+      "max_predicted_prob": 0.9971
+    },
+    "T+3": {
+      "predicted_positive_count": 425,
+      "predicted_negative_count": 49575,
+      "predicted_positive_pct": 0.85,
+      "actual_positive_pct": 21.18,
+      "mean_predicted_prob": 0.0214,
+      "min_predicted_prob": 0.0,
+      "max_predicted_prob": 0.9967
+    },
+    "T+4": {
+      "predicted_positive_count": 459,
+      "predicted_negative_count": 49541,
+      "predicted_positive_pct": 0.918,
+      "actual_positive_pct": 21.46,
+      "mean_predicted_prob": 0.0241,
+      "min_predicted_prob": 0.0001,
+      "max_predicted_prob": 0.9933
+    },
+    "T+5": {
+      "predicted_positive_count": 420,
+      "predicted_negative_count": 49580,
+      "predicted_positive_pct": 0.84,
+      "actual_positive_pct": 21.238,
+      "mean_predicted_prob": 0.0217,
+      "min_predicted_prob": 0.0001,
+      "max_predicted_prob": 0.9941
+    }
+  }
+}

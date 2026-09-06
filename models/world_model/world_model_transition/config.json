@@ -1,0 +1,22 @@
+{
+  "num_features": 68,
+  "latent_dim": 64,
+  "encoder_channels": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "encoder_dilations": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "kernel_size": 3,
+  "transition_hidden_dim": 128,
+  "forecast_horizon_k": 5,
+  "dropout": 0.1,
+  "enable_reconstruction": false,
+  "receptive_field": 61
+}

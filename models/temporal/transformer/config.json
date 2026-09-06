@@ -1,0 +1,11 @@
+{
+  "model_type": "TransformerForecaster",
+  "num_features": 68,
+  "d_model": 128,
+  "nhead": 4,
+  "num_layers": 2,
+  "dim_feedforward": 256,
+  "forecast_horizon_k": 5,
+  "num_classes": 2,
+  "dropout": 0.1
+}

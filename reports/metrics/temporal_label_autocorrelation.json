@@ -1,0 +1,43 @@
+{
+  "P(Y[t+k] == Y[t])": {
+    "T+1": 0.81853,
+    "T+2": 0.81523,
+    "T+3": 0.81527,
+    "T+4": 0.81403,
+    "T+5": 0.81297
+  },
+  "P(Y[t+k] == Y[t+k-1])": {
+    "T+1": 0.81853,
+    "T+2": 0.81853,
+    "T+3": 0.81853,
+    "T+4": 0.81853,
+    "T+5": 0.81853
+  },
+  "transition_probabilities": {
+    "T+1": {
+      "P(Attack[t+k] | Attack[t])": 0.5742,
+      "P(Attack[t+k] | Benign[t])": 0.11531,
+      "P(Benign[t+k] | Benign[t])": 0.88469
+    },
+    "T+2": {
+      "P(Attack[t+k] | Attack[t])": 0.56646,
+      "P(Attack[t+k] | Benign[t])": 0.11741,
+      "P(Benign[t+k] | Benign[t])": 0.88259
+    },
+    "T+3": {
+      "P(Attack[t+k] | Attack[t])": 0.56658,
+      "P(Attack[t+k] | Benign[t])": 0.11738,
+      "P(Benign[t+k] | Benign[t])": 0.88262
+    },
+    "T+4": {
+      "P(Attack[t+k] | Attack[t])": 0.56367,
+      "P(Attack[t+k] | Benign[t])": 0.11817,
+      "P(Benign[t+k] | Benign[t])": 0.88183
+    },
+    "T+5": {
+      "P(Attack[t+k] | Attack[t])": 0.56118,
+      "P(Attack[t+k] | Benign[t])": 0.11885,
+      "P(Benign[t+k] | Benign[t])": 0.88115
+    }
+  }
+}

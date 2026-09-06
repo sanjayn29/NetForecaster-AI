@@ -1,0 +1,21 @@
+{
+  "model_type": "TCNForecaster",
+  "num_features": 68,
+  "num_channels": [
+    64,
+    64,
+    64,
+    64
+  ],
+  "kernel_size": 3,
+  "dilations": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "forecast_horizon_k": 5,
+  "num_classes": 2,
+  "dropout": 0.1,
+  "receptive_field": 61
+}

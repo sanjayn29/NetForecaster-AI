@@ -1,0 +1,9 @@
+{
+  "model_type": "LSTMForecaster",
+  "num_features": 68,
+  "hidden_dim": 128,
+  "num_layers": 2,
+  "forecast_horizon_k": 5,
+  "num_classes": 2,
+  "dropout": 0.2
+}

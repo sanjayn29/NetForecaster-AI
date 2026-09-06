@@ -1,0 +1,87 @@
+# NetForecaster AI — Threat Stage & Attack Taxonomy Mapping (Phase 5)
+#
+# IMPORTANT SCIENTIFIC DISCLAIMER:
+# This taxonomy is a heuristic classification mapping from the 15 dataset
+# attack classes in CSE-CIC-IDS2018 to high-level enterprise threat stages.
+# It is NOT ground-truth MITRE ATT&CK telemetry and should be interpreted as
+# an operational categorization aid for Security Operations Centers (SOC).
+
+metadata:
+  version: "1.0"
+  dataset: "CSE-CIC-IDS2018"
+  description: "Heuristic mapping from network flow labels to enterprise threat kill-chain stages"
+
+stages:
+  0:
+    name: "Stage 0 — Normal Network Traffic"
+    code: "NORMAL_BASELINE"
+    description: "Benign, routine enterprise network communications and host services."
+    mitre_tactic: "None (Benign)"
+    severity: "Informational"
+
+  1:
+    name: "Stage 1 — Initial Access & Credential Access"
+    code: "INITIAL_ACCESS"
+    description: "Adversaries attempting brute-force authentication against network services (SSH, FTP, Web)."
+    mitre_tactic: "Credential Access (TA0006), Initial Access (TA0001)"
+    mitre_techniques:
+      - "T1110 (Brute Force)"
+      - "T1110.001 (Password Guessing)"
+    severity: "Medium"
+
+  2:
+    name: "Stage 2 — Web Application Exploitation & Injection"
+    code: "EXPLOITATION"
+    description: "Adversaries exploiting application vulnerabilities via Cross-Site Scripting or SQL Injection."
+    mitre_tactic: "Execution (TA0002), Initial Access (TA0001)"
+    mitre_techniques:
+      - "T1190 (Exploit Public-Facing Application)"
+      - "T1059 (Command and Scripting Interpreter)"
+    severity: "High"
+
+  3:
+    name: "Stage 3 — Service Disruption & Denial of Service"
+    code: "IMPACT_DOS"
+    description: "Volumetric and application-layer exhaustion attacks targeting infrastructure availability."
+    mitre_tactic: "Impact (TA0040)"
+    mitre_techniques:
+      - "T1498 (Network Denial of Service)"
+      - "T1499 (Endpoint Denial of Service)"
+    severity: "High"
+
+  4:
+    name: "Stage 4 — Command and Control (C2)"
+    code: "COMMAND_AND_CONTROL"
+    description: "Compromised internal bots establishing outbound communication channels with threat actor C2 servers."
+    mitre_tactic: "Command and Control (TA0011)"
+    mitre_techniques:
+      - "T1071 (Application Layer Protocol)"
+      - "T1573 (Encrypted Channel)"
+    severity: "Critical"
+
+  5:
+    name: "Stage 5 — Infiltration & Lateral Movement"
+    code: "LATERAL_MOVEMENT"
+    description: "Internal network breach progression, pivoting across subnet boundaries, or data staging."
+    mitre_tactic: "Lateral Movement (TA0008), Exfiltration (TA0010)"
+    mitre_techniques:
+      - "T1021 (Remote Services)"
+      - "T1041 (Exfiltration Over C2 Channel)"
+    severity: "Critical"
+
+attack_to_stage:
+  "Benign": 0
+  "SSH-Bruteforce": 1
+  "FTP-BruteForce": 1
+  "Brute Force -Web": 1
+  "Brute Force -XSS": 2
+  "SQL Injection": 2
+  "DDOS attack-HOIC": 3
+  "DDoS attacks-LOIC-HTTP": 3
+  "DDOS attack-LOIC-UDP": 3
+  "DoS attacks-Hulk": 3
+  "DoS attacks-GoldenEye": 3
+  "DoS attacks-SlowHTTPTest": 3
+  "DoS attacks-Slowloris": 3
+  "Bot": 4
+  "Infilteration": 5

@@ -1,0 +1,98 @@
+{
+  "train": {
+    "T+1": {
+      "total_samples": 50000,
+      "benign_count": 42013,
+      "attack_count": 7987,
+      "attack_percentage": 15.974
+    },
+    "T+2": {
+      "total_samples": 50000,
+      "benign_count": 42072,
+      "attack_count": 7928,
+      "attack_percentage": 15.856
+    },
+    "T+3": {
+      "total_samples": 50000,
+      "benign_count": 42062,
+      "attack_count": 7938,
+      "attack_percentage": 15.876
+    },
+    "T+4": {
+      "total_samples": 50000,
+      "benign_count": 42017,
+      "attack_count": 7983,
+      "attack_percentage": 15.966
+    },
+    "T+5": {
+      "total_samples": 50000,
+      "benign_count": 42015,
+      "attack_count": 7985,
+      "attack_percentage": 15.97
+    }
+  },
+  "validation": {
+    "T+1": {
+      "total_samples": 50000,
+      "benign_count": 49980,
+      "attack_count": 20,
+      "attack_percentage": 0.04
+    },
+    "T+2": {
+      "total_samples": 50000,
+      "benign_count": 49986,
+      "attack_count": 14,
+      "attack_percentage": 0.028
+    },
+    "T+3": {
+      "total_samples": 50000,
+      "benign_count": 49974,
+      "attack_count": 26,
+      "attack_percentage": 0.052
+    },
+    "T+4": {
+      "total_samples": 50000,
+      "benign_count": 49986,
+      "attack_count": 14,
+      "attack_percentage": 0.028
+    },
+    "T+5": {
+      "total_samples": 50000,
+      "benign_count": 49980,
+      "attack_count": 20,
+      "attack_percentage": 0.04
+    }
+  },
+  "test": {
+    "T+1": {
+      "total_samples": 50000,
+      "benign_count": 39382,
+      "attack_count": 10618,
+      "attack_percentage": 21.236
+    },
+    "T+2": {
+      "total_samples": 50000,
+      "benign_count": 39321,
+      "attack_count": 10679,
+      "attack_percentage": 21.358
+    },
+    "T+3": {
+      "total_samples": 50000,
+      "benign_count": 39410,
+      "attack_count": 10590,
+      "attack_percentage": 21.18
+    },
+    "T+4": {
+      "total_samples": 50000,
+      "benign_count": 39270,
+      "attack_count": 10730,
+      "attack_percentage": 21.46
+    },
+    "T+5": {
+      "total_samples": 50000,
+      "benign_count": 39381,
+      "attack_count": 10619,
+      "attack_percentage": 21.238
+    }
+  }
+}
