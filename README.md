@@ -205,3 +205,21 @@ pytest tests/ -q
 ## 10. License & Citation
 Developed for the Smart India Hackathon (SIH26153). All research code, model checkpoints, and documentation are strictly partitioned for reproducibility and offline security evaluation.
 
+---
+
+## 👨‍💻 Author
+
+**Sanjay N**
+🚀 Freelancer  
+
+🐙 Email: sanjayn29.aiml@gmail.com  
+
+🌐 Portfolio: https://sanjayn.me  
+
+💼 LinkedIn: https://linkedin.com/in/sanjayn29
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a **star ⭐ on GitHub**.
